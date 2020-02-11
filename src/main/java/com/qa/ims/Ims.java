@@ -10,10 +10,14 @@ import com.qa.ims.persistence.domain.Domain;
 import com.qa.ims.services.CustomerServices;
 import com.qa.ims.utils.Utils;
 
+
 public class Ims {
 	
 	public static final Logger LOGGER = Logger.getLogger(Ims.class);
 
+	/** 
+	 * 
+	 */
 	public void imsSystem() {
 		LOGGER.info("What is your username");
 		String username = Utils.getInput();
@@ -34,8 +38,10 @@ public class Ims {
 			CustomerController customerController = new CustomerController(new CustomerServices(new CustomerDaoMysql(username, password)));
 			doAction(customerController, action);
 			break;
-		case ITEM:
+		case PETSHOP:
+			
 			break;
+	
 		case ORDER:
 			break;
 		case STOP:

@@ -15,5 +15,6 @@ public class CustomerDaoMysqlIT {
 		CustomerDaoMysql customerDaoMysql = new CustomerDaoMysql("root", "root");
 		List<Customer> customers = customerDaoMysql.readAll();
 		assertTrue(customers.size()>0);
+		
 	}
 }
