@@ -24,27 +24,27 @@
 		private CustomerServices customerServices;
 		
 		@Test
-		public void customerServicesCreate() {
+		public void customerServicesCreateTest() {
 			Customer customer = new Customer("Jess", "L");
 			customerServices.create(customer);
 			Mockito.verify(customerDao, Mockito.times(1)).create(customer);
 		}
 		
 		@Test
-		public void customerServicesRead() {
+		public void customerServicesReadTest() {
 			customerServices.readAll();
 			Mockito.verify(customerDao, Mockito.times(1)).readAll();
 		}
 		
 		@Test
-		public void customerServicesUpdate() {
+		public void customerServicesUpdateTest() {
 			Customer customer = new Customer("Jess", "L");
 			customerServices.update(customer);
 			Mockito.verify(customerDao, Mockito.times(1)).update(customer);
 		}
 		
 		@Test
-		public void customerServicesDelete() {
+		public void customerServicesDeleteTest() {
 			customerServices.delete(1L);;
 			Mockito.verify(customerDao, Mockito.times(1)).delete(1L);
 		}
