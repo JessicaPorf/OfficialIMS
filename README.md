@@ -24,6 +24,12 @@ Semantic Testing belongs among validation tests, with which the validity of the 
 
 I used Mockito to help run my tests, it is a mocking framework. A Java based library that is used for effective unit testing of Java applications. Mockito is used to mock interfaces so that a dummy functionality can be added to a mock interface that can be used in unit testing. 
 
+## Test analyse
+
+I analysed my code with SonarQube. 
+Initially I found 0 bugs, 66 code smells, 29.1% test coverage...
+I then added tests for my services functions in my project which would have raised the test coverage somewhat significantly by around 10%; however I encountered issues when updating my project as SonarQube would not read the new tests I had made for it, so it did not carry out the function where it improved my test coverage as well as identifying some code smells in which I had corrected.
+
 ## Deployment
 
 I have one major release, however I have pushed multiple versions of my IMS each one slightly more improved than the previous. This was me working in an Agile way. Having a quick release framework allows me to push the MVP out to customers as soon as possible. Which allows time for feedback and further improvemnt in upcoming releases. 
