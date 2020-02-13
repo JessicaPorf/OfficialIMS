@@ -6,6 +6,22 @@ This is a project on Inventory Management Systems. It is a software system for t
 
 The live database I have used is Google Cloud Platform (GCP) with a MySQL server. You are able to run it via anyones machine.
 
+## How to conduct software build 
+
+* Planned project on Kanban board (Trello)
+* Created database and tables on MySql
+* Fetched sample code from external repository 
+* Compiled the code and checked for dependencies 
+* Implemented my written code
+* Linked the code files accordingly
+* Ran the automated unit tests
+* Created UML diagram
+* Risk Assesment compleated
+* Uploaded it to GitHub
+
+
+-- I used an incremental build approach
+
 ## Prerequisites
 
 I needed to install Java, Maven and MySql. I had these on my localinstall however they are avaliable to download via the internet.
