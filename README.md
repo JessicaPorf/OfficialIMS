@@ -32,3 +32,14 @@ I have one major release, however I have pushed multiple versions of my IMS each
 [Jenkins] (https://jenkins.io)
 [GitHub] (https://github.com)
 
+## Author 
+Jessica Levett 
+
+## Working Awknowledgements 
+Hassan
+Sam 
+Ash 
+Laurence 
+
+
+
