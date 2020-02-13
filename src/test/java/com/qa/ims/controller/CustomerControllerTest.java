@@ -15,12 +15,13 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import com.qa.ims.persistence.domain.Customer;
 import com.qa.ims.services.CustomerServices;
+import static org.junit.Assert.assertEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerControllerTest {
 	
 	/**
-	 *  The thing I want to fake functionlity for
+	 *  The thing I want to fake functionality for
 	 */
 	@Mock
 	private CustomerServices customerServices;
@@ -37,9 +38,9 @@ public class CustomerControllerTest {
 	public void readAllTest() {
 		CustomerController customerController = new CustomerController(customerServices);
 		List<Customer> customers = new ArrayList<>();
-		customers.add(new Customer("Chris", "P"));
-		customers.add(new Customer("Rhys", "T"));
-		customers.add(new Customer("Nic", "J"));
+		customers.add(new Customer("Jess", "L"));
+		customers.add(new Customer("Nisha", "P"));
+		customers.add(new Customer("Ash", "T"));
 		Mockito.when(customerServices.readAll()).thenReturn(customers);
 		assertEquals(customers, customerController.readAll());
 	}

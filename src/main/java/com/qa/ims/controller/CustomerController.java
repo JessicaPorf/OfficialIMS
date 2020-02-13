@@ -31,11 +31,11 @@ public class CustomerController implements CrudController<Customer>{
 	 */
 	@Override
 	public List<Customer> readAll() {
-		List<Customer> customers = customerService.readAll();
-		for(Customer customer: customers) {
+		List<Customer> customer = customerService.readAll();
+		for(Customer customers: customer) {
 			LOGGER.info(customer.toString());
 		}
-		return customers;
+		return customer;
 	}
 
 	/**
@@ -44,10 +44,10 @@ public class CustomerController implements CrudController<Customer>{
 	@Override
 	public Customer create() {
 		LOGGER.info("Please enter a first name");
-		String firstName = getInput();
-		LOGGER.info("Please enter a surname");
-		String surname = getInput();
-		Customer customer = customerService.create(new Customer(firstName, surname));
+		String first_Name = getInput();
+		LOGGER.info("Please enter a last name");
+		String last_Name = getInput();
+		Customer customer = customerService.create(new Customer(first_Name, last_Name));
 		LOGGER.info("Customer created");
 		return customer;
 	}
@@ -60,10 +60,10 @@ public class CustomerController implements CrudController<Customer>{
 		LOGGER.info("Please enter the id of the customer you would like to update");
 		Long id = Long.valueOf(getInput());
 		LOGGER.info("Please enter a first name");
-		String firstName = getInput();
-		LOGGER.info("Please enter a surname");
-		String surname = getInput();
-		Customer customer = customerService.update(new Customer(id, firstName, surname));
+		String first_Name = getInput();
+		LOGGER.info("Please enter a last name");
+		String last_Name = getInput();
+		Customer customer = customerService.update(new Customer(id, first_Name, last_Name));
 		LOGGER.info("Customer Updated");
 		return customer;
 	}

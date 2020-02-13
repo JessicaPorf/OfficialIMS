@@ -8,6 +8,17 @@ import com.qa.ims.utils.Utils;
  * Action is a collection of commands which are used to determine the type of function to apply to an entity.
  *
  */
+
+/**
+ * I created CRUD functions as to follow them in my project.
+ * 	CREATE("To save a new item into the database"), 
+	READ("To read an item from the database"),
+	UPDATE("To change an item already in the database"), 
+	DELETE("To remove an item from the database"),
+	RETURN("To return to domain selection");
+ * @author Admin
+ *
+ */
 public enum Action {
 	CREATE("To save a new item into the database"), 
 	READ("To read an item from the database"),
@@ -31,7 +42,7 @@ public enum Action {
 	}
 
 	/**
-	 * Prints out all posible actions
+	 * Prints out all possible actions
 	 */
 	public static void printActions() {
 		for (Action action : Action.values()) {

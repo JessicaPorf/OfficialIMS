@@ -5,9 +5,17 @@ import org.apache.log4j.Logger;
 import com.qa.ims.controller.Action;
 import com.qa.ims.controller.CrudController;
 import com.qa.ims.controller.CustomerController;
+import com.qa.ims.controller.ItemController;
+import com.qa.ims.controller.OrdersController;
 import com.qa.ims.persistence.dao.CustomerDaoMysql;
+import com.qa.ims.persistence.dao.ItemDaoMysql;
+import com.qa.ims.persistence.dao.OrdersDaoMysql;
 import com.qa.ims.persistence.domain.Domain;
+import com.qa.ims.persistence.domain.Item;
+import com.qa.ims.services.CrudServices;
 import com.qa.ims.services.CustomerServices;
+import com.qa.ims.services.ItemServices;
+import com.qa.ims.services.OrdersServices;
 import com.qa.ims.utils.Utils;
 
 
@@ -15,7 +23,7 @@ public class Ims {
 	
 	public static final Logger LOGGER = Logger.getLogger(Ims.class);
 
-	/** 
+	/** I have used a Logger object as it is used to log messages for a specific system component.Loggers are normally named using a hierarchical dot-separated namespace.
 	 * 
 	 */
 	public void imsSystem() {
@@ -39,10 +47,13 @@ public class Ims {
 			doAction(customerController, action);
 			break;
 		case PETSHOP:
-			
+			ItemController ItemController = new ItemController(new ItemServices(new ItemDaoMysql(username, password)));
+			doAction(ItemController, action);
 			break;
 	
 		case ORDER:
+			OrdersController ordersController = new OrdersController(new OrdersServices(new OrdersDaoMysql(username, password)));
+			doAction(ordersController, action);
 			break;
 		case STOP:
 			break;

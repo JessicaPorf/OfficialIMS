@@ -11,7 +11,11 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.qa.ims.persistence.domain.Customer;
-
+/**
+ * The DAO provides some specific data operations without exposing details of the database.
+ * @author Admin
+ *
+ */
 public class CustomerDaoMysql implements Dao<Customer> {
 
 	public static final Logger LOGGER = Logger.getLogger(CustomerDaoMysql.class);
@@ -21,7 +25,7 @@ public class CustomerDaoMysql implements Dao<Customer> {
 	private String password;
 
 	public CustomerDaoMysql(String username, String password) {
-		this.jdbcConnectionUrl = "jdbc:mysql://34.89.13.205:3306/ims";
+		this.jdbcConnectionUrl = "jdbc:mysql://34.89.13.205:3306/projectIMS";
 		this.username = username;
 		this.password = password;
 	}
@@ -34,9 +38,9 @@ public class CustomerDaoMysql implements Dao<Customer> {
 
 	Customer customerFromResultSet(ResultSet resultSet) throws SQLException {
 		Long id = resultSet.getLong("id");
-		String firstName = resultSet.getString("first_name");
-		String surname = resultSet.getString("surname");
-		return new Customer(id, firstName, surname);
+		String first_Name = resultSet.getString("first_name");
+		String last_Name = resultSet.getString("last_Name");
+		return new Customer(id, first_Name, last_Name);
 	}
 	/**
 	 * Reads all customers from the database
@@ -64,7 +68,7 @@ public class CustomerDaoMysql implements Dao<Customer> {
 	public Customer readLatest() {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
 				Statement statement = connection.createStatement();
-				ResultSet resultSet = statement.executeQuery("SELECT FROM customer ORDER BY id DESC LIMIT 1");) {
+				ResultSet resultSet = statement.executeQuery("SELECT * FROM customer ORDER BY id DESC LIMIT 1");) {
 			resultSet.next();
 			return customerFromResultSet(resultSet);
 		} catch (Exception e) {
@@ -83,8 +87,8 @@ public class CustomerDaoMysql implements Dao<Customer> {
 	public Customer create(Customer customer) {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
 				Statement statement = connection.createStatement();) {
-			statement.executeUpdate("insert into customer(forename, surname) values('" + customer.getForeName()
-					+ "','" + customer.getSurname() + "')");
+			statement.executeUpdate("insert into customer(first_Name, last_Name) values('" + customer.getFirst_Name()
+					+ "','" + customer.getLast_Name() + "')");
 			return readLatest();
 		} catch (Exception e) {
 			LOGGER.debug(e.getStackTrace());
@@ -117,8 +121,8 @@ public class CustomerDaoMysql implements Dao<Customer> {
 	public Customer update(Customer customer) {
 		try (Connection connection = DriverManager.getConnection(jdbcConnectionUrl, username, password);
 				Statement statement = connection.createStatement();) {
-			statement.executeUpdate("update customer set foreName ='" + customer.getForeName() + "', surname ='"
-					+ customer.getSurname() + "' where id =" + customer.getId());
+			statement.executeUpdate("update customer set first_Name ='" + customer.getFirst_Name() + "', last_Name ='"
+					+ customer.getLast_Name() + "' where id =" + customer.getId());
 			return readCustomer(customer.getId());
 		} catch (Exception e) {
 			LOGGER.debug(e.getStackTrace());

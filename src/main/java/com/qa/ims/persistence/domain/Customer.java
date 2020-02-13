@@ -3,18 +3,18 @@ package com.qa.ims.persistence.domain;
 public class Customer {
 
 	private Long id;
-	private String foreName;
-	private String surname;
+	private String First_Name;
+	private String Last_Name;
 
-	public Customer(String foreName, String surname) {
-		this.foreName = foreName;
-		this.surname = surname;
+	public Customer(String First_Name, String Last_Name) {
+		this.First_Name = First_Name;
+		this.Last_Name = Last_Name;
 	}
 
-	public Customer(Long id, String foreName, String surname) {
+	public Customer(Long id, String First_Name, String Last_Name) {
 		this.id = id;
-		this.foreName = foreName;
-		this.surname = surname;
+		this.First_Name = First_Name;
+		this.Last_Name = Last_Name;
 	}
 
 	public Long getId() {
@@ -25,33 +25,33 @@ public class Customer {
 		this.id = id;
 	}
 
-	public String getForeName() {
-		return foreName;
+	public String getFirst_Name() {
+		return First_Name;
 	}
 
-	public void setForeName(String foreName) {
-		this.foreName = foreName;
+	public void setFirst_Name(String First_Name) {
+		this.First_Name = First_Name;
 	}
 
-	public String getSurname() {
-		return surname;
+	public String getLast_Name() {
+		return Last_Name;
 	}
 
-	public void setSurname(String surname) {
-		this.surname = surname;
+	public void setLast_Name(String Last_Name) {
+		this.Last_Name = Last_Name;
 	}
 
 	public String toString() {
-		return "id:" + id + " first name:" + foreName + " surname:" + surname;
+		return "id:" + id + " first name:" + First_Name + " surname:" + Last_Name;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((foreName == null) ? 0 : foreName.hashCode());
+		result = prime * result + ((First_Name == null) ? 0 : First_Name.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((surname == null) ? 0 : surname.hashCode());
+		result = prime * result + ((Last_Name == null) ? 0 : Last_Name.hashCode());
 		return result;
 	}
 
@@ -64,20 +64,20 @@ public class Customer {
 		if (getClass() != obj.getClass())
 			return false;
 		Customer other = (Customer) obj;
-		if (foreName == null) {
-			if (other.foreName != null)
+		if (First_Name == null) {
+			if (other.First_Name != null)
 				return false;
-		} else if (!foreName.equals(other.foreName))
+		} else if (!First_Name.equals(other.First_Name))
 			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (surname == null) {
-			if (other.surname != null)
+		if (Last_Name == null) {
+			if (other.Last_Name != null)
 				return false;
-		} else if (!surname.equals(other.surname))
+		} else if (!Last_Name.equals(other.Last_Name))
 			return false;
 		return true;
 	}
