@@ -8,7 +8,13 @@ The live database I have used is Google Cloud Platform (GCP) with a MySQL server
 
 ## Prerequisites
 
-I needed to install Java, Maven and MySQL. I had these on my localinstall however they are avaliable to download online.
+I needed to install Java, Maven and MySql. I had these on my localinstall however they are avaliable to download via the internet.
+
+Java is a set of computer software and specifications; that provides a system for developing application software and deploying it in a cross-platform computing environment.
+
+Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM). Maven can manage a project's build,reporting and documentation from a central piece of information. 
+
+MySql is an open-source relational database management system (RDBMS). It is based on the structure query language (SQL), which is used for adding, removing and modifying information in the database.
 
 ## Running the tests
 
@@ -26,7 +32,7 @@ I have one major release, however I have pushed multiple versions of my IMS each
 [Maven] (https://maven.apache.org)
 
 
-## Other resources I used in my project
+## Other building tools I used in my project
 [Violet] (http://alexdp.free.fr/violetumleditor/page.php?id=en:download)
 [MySql] (https://www.mysql.com/downloads/)
 [Jenkins] (https://jenkins.io)
