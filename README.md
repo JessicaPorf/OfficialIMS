@@ -39,9 +39,9 @@ Jessica Levett
 This project is licensed under the MIT License 
 
 ## Working Awknowledgements 
-Hassan
-Sam 
-Ash 
+Hassan,
+Sam, 
+Ash & 
 Laurence 
 
 
