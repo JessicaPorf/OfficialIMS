@@ -35,6 +35,9 @@ I have one major release, however I have pushed multiple versions of my IMS each
 ## Author 
 Jessica Levett 
 
+## License
+This project is licensed under the MIT License 
+
 ## Working Awknowledgements 
 Hassan
 Sam 
